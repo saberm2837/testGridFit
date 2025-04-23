@@ -7,15 +7,15 @@ We systematically test GridFit, detect and resubmit any failed runs, aggregate o
 ## Project Structure
 
  - Raw DatafMRI skull-stripped images + ground truth locations:https://osf.io/k8v9u/
- - Generated FiguresVisualization outputs (plots, statistics):https://osf.io/gqnef/
+ - Generated outputs (plots, statistics):https://osf.io/gqnef/
  - Code Components
    - `testGridFit_V6.jl`: Main Julia script that runs GridFit and generates output files.
    - `testGridFit_V6.slurm`: SLURM batch script to run a single instance of testGridFit.
-   - `run_testGridFit_V6.sh`: Shell script to submit 300 SLURM jobs for each subject/grid point configuration.
-   - `find_missing_files.sh`: Shell script to check missing outputs.
-   - `rerun_failed_jobs.sh`: Shell script to resubmit failed runs manually.
-   - `auto_rerun_missing_jobs.sh`: Automatically finds and resubmits missing jobs.
-   - `cancel_jobs.sh`: Cancel a range of job IDs if needed.
+   - `submit_job_GridFit_V6.sh`: Shell script to submit 300 SLURM jobs for each subject/grid point configuration.
+   - `missing_files_GridFit_V6.sh`: Shell script to check missing outputs.
+   - `resubmit_job_GridFit_V6.sh`: Shell script to resubmit failed runs manually.
+   - `auto_resubmit_job_GridFit_V6.sh`: Automatically finds and resubmits missing jobs.
+   - `cancel_job.sh`: Cancel a range of job IDs if needed.
    - `comb_GridFit_out_files_V6.ipynb`: Jupyter Notebook to combine and organize outputs into analysis-ready format.
    - `visualize_GridFit_V6.ipynb`: Jupyter Notebook to visualize statistical results.
 All code uses the Julia programming language (with Julia kernel for Jupyter notebooks).
